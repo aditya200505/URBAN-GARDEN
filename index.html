@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Urban Garden — Plants & Flowers</title>
+  <meta name="description" content="Your one-stop shop for beautiful plants, flowers, and gardening accessories." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="plant-animation-container">
+        <svg class="growing-plant" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path class="stem" d="M50 90 V50" />
+          <path class="leaf leaf1" d="M50 75 Q40 65 35 70" />
+          <path class="leaf leaf2" d="M50 75 Q60 65 65 70" />
+          <path class="leaf leaf3" d="M50 60 Q42 50 38 55" />
+          <path class="leaf leaf4" d="M50 60 Q58 50 62 55" />
+          <circle class="flower-bud" cx="50" cy="45" r="5" />
+        </svg>
+      </div>
+      <div class="logo"><span>U</span><span>G</span></div>
+      <h1>The Urban Garden</h1>
+    </div>
+  </div>
+
+
+  <div id="loginPage" class="login-page-overlay">
+    <div class="login-container">
+        <div class="tree-animation-container">
+            <svg id="growingTree" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="trunk-and-branches">
+                    <path class="trunk" d="M 50,95 V 50" />
+                    <path class="branch" d="M 50,80 L 30,60" />
+                    <path class="branch" d="M 50,75 L 70,55" />
+                    <path class="branch" d="M 50,65 L 40,45" />
+                    <path class="branch" d="M 50,60 L 60,40" />
+                </g>
+                <g class="flowers">
+                    <circle class="flower" cx="30" cy="60" r="5" />
+                    <circle class="flower" cx="70" cy="55" r="5" />
+                    <circle class="flower" cx="40" cy="45" r="5" />
+                    <circle class="flower" cx="60" cy="40" r="5" />
+                </g>
+            </svg>
+        </div>
+        <h2>Welcome to The Urban Garden</h2>
+        <p>Your personal oasis awaits. Please sign in to continue.</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter your name or email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign In / Register</button>
+        </form>
+        <div class="login-footer">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">UG</div>
+        <div>
+          <h1>The Urban Garden</h1>
+          <div class="muted">Fresh Plants & Bouquets Delivered</div>
+        </div>
+      </div>
+
+      <nav class="top-nav" role="navigation" aria-label="Main Navigation">
+        <div class="search" aria-hidden="false">
+          <input id="globalSearch" type="search" placeholder="Search for plants, flowers, pots..." aria-label="Search products">
+          <div class="search-icon">🔍</div>
+          <button class="clear-search-btn" id="clearSearchBtn" title="Clear search" style="display: none;">✕</button>
+        </div>
+        <div class="action-icons" role="group" aria-label="Actions">
+          <button class="icon-btn" id="themeToggleBtn" title="Toggle theme">
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="icon-btn" id="settingsBtn" title="Settings">
+            <svg class="settings-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+          <button class="icon-btn" id="wishlistBtn" title="Wishlist">❤</button>
+          <button class="icon-btn" id="openCartBtn" title="Open cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span id="headerCartCount" class="sr-only">0 items</span></button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="left">
+        <span class="chip">New Arrivals</span>
+        <h2 id="hero-heading">Bring Nature Indoors</h2>
+        <p>Find the perfect plants and flowers to brighten up your space. Same-day delivery available.</p>
+        <button class="cta" id="shopNow">Shop All Products</button>
+      </div>
+      <div class="right hero-carousel-wrapper" aria-hidden="true">
+        <button class="carousel-nav-btn prev" id="carouselPrevBtn" aria-label="Previous Item">‹</button>
+        <div class="hero-carousel" id="newArrivalsCarousel">
+          
+        </div>
+        <button class="carousel-nav-btn next" id="carouselNextBtn" aria-label="Next Item">›</button>
+        <div class="carousel-dots" id="newArrivalsDots"></div>
+      </div>
+    </section>
+
+    <main>
+      <nav class="category-filters" id="categoryFilters" aria-label="Product categories">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="plants">Indoor Plants</button>
+        <button class="filter-btn" data-category="bouquets">Bouquets</button>
+        <button class="filter-btn" data-category="accessories">Accessories</button>
+      </nav>
+
+      <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <h2 style="margin:0">All Products</h2>
+        <div class="controls-container">
+          <div class="sort-container">
+            <label for="sortOptions" class="sr-only">Sort by</label>
+            <select id="sortOptions" class="sort-select">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="on-sale">On Sale</option>
+              <option value="popular">Most Popular</option>
+              <option value="newest">Recently Added</option>
+              <option value="rating">Rating: High to Low</option>
+            </select>
+          </div>
+          <div class="muted">Showing <span id="shownCount">0</span> of <span id="totalCount">0</span> items</div>
+        </div>
+      </header>
+
+      <div class="product-grid-wrapper">
+        <div class="grid-loader" id="gridLoader" style="display: none;">🍃</div>
+        <section class="products" id="productList" aria-live="polite">
+         
+        </section>
+      </div>
+
+      <div id="noResultsMessage" style="display: none; text-align: center; padding: 40px 0; color: var(--muted);">
+        <h3>No Products Found</h3>
+        <p>Try adjusting your search or filters to find what you're looking for.</p>
+      </div>
+
+      <section id="bestSellersSection" style="display: none; margin-top: 40px;">
+        <h2 style="margin-bottom: 8px;">Our Best Sellers</h2>
+        <div class="best-sellers-carousel-wrapper">
+          <button class="carousel-nav-btn prev" id="bestSellersCarouselPrevBtn" aria-label="Previous Best Seller">‹</button>
+          <div class="best-sellers-carousel" id="bestSellersList">
+          
+          </div>
+          <button class="carousel-nav-btn next" id="bestSellersCarouselNextBtn" aria-label="Next Best Seller">›</button>
+        </div>
+      </section>
+
+      <section id="recentlyViewedSection" style="display: none; margin-top: 40px;">
+        <h2 style="margin-bottom: 8px;">Recently Viewed</h2>
+        <div class="products" id="recentlyViewedList">
+          
+        </div>
+      </section>
+
+      <nav id="pagination" class="pagination-nav" aria-label="Product page navigation"></nav>
+    </main>
+
+    <section id="testimonialsSection" style="margin-top: 60px;">
+      <h2 style="text-align: center; margin-bottom: 24px;">What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">"The Monstera I ordered arrived in perfect condition, and it's even more beautiful in person. The delivery was so fast! I'm already planning my next purchase."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Avatar of Priya S." class="testimonial-avatar">
+            <div>
+              <strong>Priya S.</strong>
+              <span class="muted">Bangalore</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">"I'm so impressed with the quality of the bouquets. I sent the Pastel Bouquet to my mom for her birthday, and she absolutely loved it. The flowers were so fresh and vibrant."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar of Rohan M." class="testimonial-avatar">
+            <div>
+              <strong>Rohan M.</strong>
+              <span class="muted">Mumbai</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-rating">★★★★☆</div>
+          <p class="testimonial-quote">"As a beginner plant parent, I was nervous, but the ZZ Plant is thriving! The care instructions were super helpful. Excellent customer service and a great selection."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar of Ananya K." class="testimonial-avatar">
+            <div>
+              <strong>Ananya K.</strong>
+              <span class="muted">Delhi</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+ 
+    <footer class="site-footer-about">
+      <div class="about-header">
+        <div class="about-header-text">
+          <h2>About PlantShopApp</h2>
+          <p>Your trusted online destination for plants and flowers. We make it easy to bring greenery and freshness into every home and office.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+          <h3>Our Story</h3>
+          <p>Starting as a small initiative, we now help thousands of customers find the perfect plants and bouquets.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+          <h3>Our Values</h3>
+          <p>Sustainability, freshness, and customer happiness are at the heart of what we do.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+          <h3>Our Promise</h3>
+          <p>We guarantee healthy, beautiful plants delivered with care, right to your doorstep.</p>
+        </div>
+      </div>
+      <div class="about-contact-section">
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>hello@plantshopapp.com</span>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Green Valley, Bangalore, India</span>
+        </div>
+      </div>
+      <p class="closing-line">Thank you for choosing PlantShopApp – where nature meets convenience.</p>
+    </footer>
+
+  </div>
+
+ 
+  <div class="sidebar-backdrop" id="filterBackdrop" style="display: none;"></div>
+  <aside class="settings-sidebar" id="settingsSidebar">
+    <div class="modal-header">
+      <h2>Settings</h2>
+      <button class="icon-btn" id="closeSettingsSidebar">✕</button>
+    </div>
+    <div class="settings-menu">
+        <button class="settings-menu-item active" data-panel="filters">Product Filters</button>
+        <button class="settings-menu-item" data-panel="orders">Orders & Returns</button>
+        <button class="settings-menu-item" data-panel="language">Language & Currency</button>
+        <button class="settings-menu-item" data-panel="theme">Theme & Accessibility</button>
+        <button class="settings-menu-item" data-panel="address">Address & Delivery</button>
+        <button class="settings-menu-item" data-panel="payment">Payment Settings</button>
+        <button class="settings-menu-item" data-panel="notifications">Notifications</button>
+        <button class="settings-menu-item" id="logoutBtn">Logout</button>
+    </div>
+    <div class="settings-panel active" id="filtersPanel">
+        <div class="filter-group">
+            <h4>Price Range</h4>
+            <div class="price-range-inputs">
+                <input type="number" id="minPrice" placeholder="Min" min="0">
+                <span>-</span>
+                <input type="number" id="maxPrice" placeholder="Max" min="0">
+            </div>
+        </div>
+        <div class="filter-group">
+            <label class="checkbox-label"><input type="checkbox" id="inStockOnly"> In Stock Only</label>
+            <label class="checkbox-label"><input type="checkbox" id="onSaleOnly"> On Sale Only</label>
+        </div>
+    </div>
+    <div class="settings-panel" id="ordersPanel" style="display: none;">
+        <h4>Orders & Returns</h4>
+        <div class="placeholder-content">
+            <p class="muted">You have no recent orders.</p>
+            <p class="muted" style="font-size: 12px;">This is where your order history and return options would appear once you've made a purchase.</p>
+        </div>
+    </div>
+    <div class="settings-panel" id="languagePanel" style="display: none;">
+        <h4>Language & Currency</h4>
+        <div class="filter-group">
+            <label for="currencySelect">Currency</label>
+            <select id="currencySelect" class="sort-select" style="width: 100%;">
+                <option value="INR">INR (₹)</option>
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="languageSelect">Language</label>
+            <select id="languageSelect" class="sort-select" style="width: 100%;" disabled>
+                <option value="en">English</option>
+            </select>
+            <p class="muted" style="font-size: 12px; margin-top: 8px;">Multi-language support is coming soon.</p>
+        </div>
+    </div>
+    <div class="settings-panel" id="themePanel" style="display: none;">
+        <h4>Theme & Accessibility</h4>
+        <div class="toggle-group">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="themeToggleSwitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="toggle-group">
+            <span>Reduce Motion</span>
+            <label class="switch">
+                <input type="checkbox" id="reduceMotionToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="settings-panel" id="addressPanel" style="display: none;">
+        <h4>Address & Delivery</h4>
+        <form id="addressForm">
+            <div class="filter-group">
+                <label for="savedCustomerPhone">Phone Number</label>
+                <input type="tel" id="savedCustomerPhone" placeholder="e.g., 9876543210">
+            </div>
+            <div class="filter-group">
+                <label for="savedCustomerAddress">Full Address</label>
+                <textarea id="savedCustomerAddress" rows="4" placeholder="Enter your full address"></textarea>
+            </div>
+            <button type="submit" class="add-btn" style="width:100%;">Save Address</button>
+        </form>
+    </div>
+    <div class="settings-panel" id="paymentPanel" style="display: none;">
+        <h4>Payment Settings</h4>
+        <div class="placeholder-content">
+            <p class="muted">No payment methods saved.</p>
+            <p class="muted" style="font-size: 12px;">Securely add and manage your payment methods here for faster checkout in the future.</p>
+        </div>
+    </div>
+    <div class="settings-panel" id="notificationsPanel" style="display: none;">
+        <h4>Notifications</h4>
+        <div class="toggle-group">
+            <span>Email Promotions</span>
+            <label class="switch">
+                <input type="checkbox" id="emailPromoToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="toggle-group">
+            <span>Order Updates</span>
+            <label class="switch">
+                <input type="checkbox" id="orderUpdatesToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="filter-sidebar-footer">
+        <button class="text-btn" id="resetFiltersBtn">Reset</button>
+        <button class="text-btn" id="aboutLinkInFilter">About Us</button>
+    </div>
+  </aside>
+
+  
+  <div class="cart-bar" id="cartBar" role="region" aria-label="Cart summary" style="display:none">
+    <div>
+      <div style="font-weight:700">Cart</div>
+      <div class="muted" id="cartSummary">0 items • ₹0</div>
+    </div>
+    <div style="margin-left:6px">
+      <div class="cart-count" id="floatingCount">0</div>
+    </div>
+    <div style="margin-left:8px">
+      <button class="add-btn" id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="left">
+        <div style="border-radius:12px;overflow:hidden;height:320px;background:#fafafa;display:flex;align-items:center;justify-content:center" id="modalImgWrap">
+          <img id="modalImg" src="" alt="Product image">
+        </div>
+      </div>
+      <div class="right">
+        <h3 id="modalTitle">Title</h3>
+        <p id="modalDesc" class="muted">Description</p>
+        <div style="margin-top:10px;font-size:18px;font-weight:700" id="modalPrice">₹0</div>
+        <div id="modalStockStatus" class="stock-status"></div>
+        <div id="alsoBoughtSection" class="also-bought-section" style="display: none;">
+          <h4>Customers Also Bought</h4>
+          <div id="alsoBoughtList" class="also-bought-list">
+          </div>
+        </div>
+        <div class="qty" style="margin-top:10px">
+          <button id="decQty" aria-label="Decrease quantity">−</button>
+          <div id="qtyVal">1</div>
+          <button id="incQty" aria-label="Increase quantity">+</button>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="add-btn" id="modalAdd">Add to cart</button>
+          <button class="icon-btn" id="modalShare" title="Share">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          </button>
+          <button class="icon-btn" id="modalClose" title="Close">✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="modal-backdrop" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" style="max-width: 600px;">
+      <div style="width:100%">
+        <div class="modal-header">
+          <h2>Your Cart</h2>
+          <button class="text-btn" id="clearCartBtn">Clear Cart</button>
+          <button class="icon-btn" id="cartModalClose" title="Close">✕</button>
+        </div>
+        <div id="cartModalList">
+         
+        </div>
+        <div id="cartModalEmpty" class="cart-modal-empty">Your cart is empty.</div>
+        <div id="cartModalSummary" class="cart-modal-summary">
+          <div class="cart-total-row">
+            <span>Total</span>
+            <span id="cartModalTotal">₹0</span>
+          </div>
+          <button class="add-btn" id="proceedToPaymentBtn" style="width:100%;margin-top:15px;">Proceed to Payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" style="max-width: 400px;">
+      <div class="confirm-modal-content">
+        <h3 id="confirmModalTitle">Are you sure?</h3>
+        <p id="confirmModalText" class="muted">This action cannot be undone.</p>
+        <div class="confirm-modal-actions">
+          <button class="text-btn" id="confirmModalCancelBtn">Cancel</button>
+          <button class="add-btn" id="confirmModalConfirmBtn">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="modal-backdrop" id="deliveryModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" style="max-width: 500px;">
+      <div style="width:100%">
+        <div class="modal-header">
+          <h2>Delivery Details</h2>
+          <button class="icon-btn" id="deliveryModalClose" title="Close">✕</button>
+        </div>
+        <form id="deliveryForm">
+          <div class="filter-group">
+            <label for="customerPhone">Phone Number</label>
+            <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="filter-group">
+            <label for="customerAddress">Full Address</label>
+            <textarea id="customerAddress" rows="3" placeholder="Enter your full address, including city and pincode" required></textarea>
+          </div>
+          <button type="submit" class="add-btn" style="width:100%;margin-top:15px;">Confirm Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-backdrop" id="wishlistModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" style="max-width: 600px;">
+      <div style="width:100%">
+        <div class="modal-header">
+          <h2>Your Wishlist</h2>
+          <button class="text-btn" id="clearWishlistBtn">Clear All</button>
+          <button class="icon-btn" id="wishlistModalClose" title="Close">✕</button>
+        </div>
+        <div id="wishlistModalList">
+          
+        </div>
+        <div id="wishlistModalEmpty" class="cart-modal-empty">Your wishlist is empty.</div>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">↑</button>
+
+  <script id="product-data">
+    window.PRODUCT_DATA = [
+      { id: 'p1', name: 'Monstera Deliciosa', price: 1299, category: 'plants', img: 'images/images1.jpg', desc: 'Iconic split leaves, a must-have for any plant lover.', stock: 15, salePrice: 999, rating: 4.8, dateAdded: '2025-08-10' },
+      { id: 'p2', name: 'Snake Plant', price: 199, category: 'plants', img: 'images/images2.jpeg', desc: 'Extremely hardy and an excellent air purifier.', stock: 10, salePrice: 179, rating: 4.7, dateAdded: '2025-08-11' },
+      { id: 'p3', name: 'Pastel Bouquet', price: 159, category: 'bouquets', img: 'images/images3.jpg', desc: 'A beautiful mix of seasonal pastel-colored flowers.', stock: 8, salePrice: 139, rating: 4.9, dateAdded: '2025-08-12' },
+      { id: 'p4', name: 'Fiddle Leaf Fig', price: 249, category: 'plants', img: 'images/images4.webp', desc: 'A trendy statement plant with large, lush leaves.', stock: 0, salePrice: null, rating: 4.6, dateAdded: '2025-08-13' },
+      { id: 'p5', name: 'Ceramic Planter Pot', price: 499, category: 'accessories', img: 'images/images5.jpeg', desc: 'A stylish home for your favorite medium-sized plant.', stock: 25, salePrice: null, rating: 4.5, dateAdded: '2025-08-14' },
+      { id: 'p6', name: 'String of Pearls', price: 399, category: 'plants', img: 'images/images6.jpg', desc: 'Unique trailing succulent that looks like a string of beads.', stock: 0, salePrice: null, rating: 4.4, dateAdded: '2025-08-15' },
+      { id: 'p7', name: 'Gardening Tool Set', price: 899, category: 'accessories', img: 'images/images7.jpg', desc: 'Essential hand tools for indoor and outdoor gardening.', stock: 12, salePrice: 799, rating: 4.6, dateAdded: '2025-08-16' },
+      { id: 'p8', name: 'Pink Anthurium', price: 119, category: 'plants', img: 'images/images8.webp', desc: 'Features stunning, long-lasting pink heart-shaped flowers.', stock: 7, salePrice: null, rating: 4.7, dateAdded: '2025-08-17' },
+      { id: 'p9', name: 'ZZ Plant', price: 199, category: 'plants', img: 'images/images9.webp', desc: 'Drought-tolerant with glossy, dark green leaves.', stock: 10, salePrice: null, rating: 4.8, dateAdded: '2025-08-18' },
+      { id: 'p10', name: 'Pothos Plant', price: 599, category: 'plants', img: 'images/images10.jpeg', desc: 'Easy-care trailing plant, perfect for beginners.', stock: 20, salePrice: 499, rating: 4.9, dateAdded: '2025-08-19' },
+      { id: 'p11', name: 'Orchid', price: 499, category: 'plants', img: 'images/images11.webp', desc: 'Elegant and exotic, with beautiful long-lasting blooms.', stock: 6, salePrice: null, rating: 4.7, dateAdded: '2025-08-20' },
+      { id: 'p12', name: 'Bird of Paradise', price: 249, category: 'plants', img: 'images/images12.webp', desc: 'Large, tropical leaves that make a bold statement.', stock: 3, salePrice: null, rating: 4.6, dateAdded: '2025-08-21' },
+      { id: 'p13', name: 'Calathea Orbifolia', price: 400, category: 'plants', img: 'images/images13.jpg', desc: 'Stunning round leaves with silver-green stripes.', stock: 5, salePrice: null, rating: 4.5, dateAdded: '2025-08-22' },
+      { id: 'p14', name: 'Spider Plant', price: 209, category: 'plants', img: 'images/images14.jpg', desc: 'Produces "spiderettes" that can be propagated easily.', stock: 15, salePrice: null, rating: 4.8, dateAdded: '2025-08-23' },
+      { id: 'p15', name: 'Succulent Mix', price: 200, category: 'plants', img: 'images/images15.jpg', desc: 'A collection of three assorted mini succulents.', stock: 0, salePrice: null, rating: 4.3, dateAdded: '2025-08-24' },
+      { id: 'p16', name: 'Peace Lily', price: 899, category: 'plants', img: 'images/images16.webp', desc: 'Known for its white spathes and air-purifying qualities.', stock: 8, salePrice: 799, rating: 4.7, dateAdded: '2025-08-25' },
+      { id: 'p17', name: 'Wildflower Bouquet', price: 456, category: 'bouquets', img: 'images/images17.jpeg', desc: 'A rustic and charming mix of seasonal wildflowers.', stock: 10, salePrice: null, rating: 4.6, dateAdded: '2025-08-26' },
+      { id: 'p18', name: 'Sunflower Bouquet', price: 478, category: 'bouquets', img: 'images/images18.jpeg', desc: 'Bright and cheerful sunflowers to light up any room.', stock: 12, salePrice: null, rating: 4.8, dateAdded: '2025-08-27' },
+      { id: 'p19', name: 'Red Rose Bouquet', price: 2199, category: 'bouquets', img: 'images/images19.jpg', desc: 'A classic and timeless expression of love.', stock: 5, salePrice: 1999, rating: 4.9, dateAdded: '2025-08-28' },
+      { id: 'p20', name: 'Dried Flower Arrangement', price: 254, category: 'bouquets', img: 'images/images20.webp', desc: 'A long-lasting arrangement with beautiful textures.', stock: 7, salePrice: null, rating: 4.5, dateAdded: '2025-08-29' },
+      { id: 'p21', name: 'Watering Can', price: 347, category: 'accessories', img: 'images/images21.jpeg', desc: 'A stylish and functional metal watering can.', stock: 18, salePrice: null, rating: 4.6, dateAdded: '2025-08-30' },
+      { id: 'p22', name: 'Plant Mister', price: 356, category: 'accessories', img: 'images/images22.jpg', desc: 'Provides the perfect amount of humidity for tropical plants.', stock: 22, salePrice: null, rating: 4.4, dateAdded: '2025-09-01' },
+      { id: 'p23', name: 'Terracotta Pot Set', price: 799, category: 'accessories', img: 'images/images23.webp', desc: 'A set of three classic terracotta pots with saucers.', stock: 14, salePrice: 699, rating: 4.7, dateAdded: '2025-09-02' },
+      { id: 'p24', name: 'Plant Food', price: 200, category: 'accessories', img: 'images/images24.webp', desc: 'All-purpose liquid fertilizer for healthy growth.', stock: 30, salePrice: null, rating: 4.8, dateAdded: '2025-09-03' },
+      { id: 'p25', name: 'Hanging Planter', price: 454, category: 'accessories', img: 'images/images25.jpg', desc: 'Macrame plant hanger for a bohemian touch.', stock: 11, salePrice: null, rating: 4.6, dateAdded: '2025-09-04' },
+      { id: 'p26', name: 'Aloe Vera', price: 99, category: 'plants', img: 'images/images26.jpg', desc: 'A medicinal plant with soothing gel-filled leaves.', stock: 13, salePrice: null, rating: 4.7, dateAdded: '2025-09-05' },
+      { id: 'p27', name: 'Boston Fern', price: 101, category: 'plants', img: 'images/images27.jpg', desc: 'Lush, feathery fronds that love humidity.', stock: 0, salePrice: null, rating: 4.5, dateAdded: '2025-09-06' },
+      { id: 'p28', name: 'Money Tree', price: 400, category: 'plants', img: 'images/images28.avif', desc: 'Believed to bring good luck and prosperity.', stock: 4, salePrice: null, rating: 4.6, dateAdded: '2025-09-07' },
+      { id: 'p29', name: 'Rubber Plant', price: 1200, category: 'plants', img: 'images/images29.jpeg', desc: 'Features large, dark, glossy leaves.', stock: 6, salePrice: 1199, rating: 4.7, dateAdded: '2025-09-08' },
+      { id: 'p30', name: 'Air Plant (Tillandsia)', price: 999, category: 'plants', img: 'images/images30.jpg', desc: 'A unique plant that doesn\'t require soil.', stock: 18, salePrice: null, rating: 4.3, dateAdded: '2025-09-09' },
+      { id: 'p31', name: 'Peony Bouquet', price: 999, category: 'bouquets', img: 'images/images31.avif', desc: 'Luxurious and fragrant, available for a limited season.', stock: 5, salePrice: null, rating: 4.9, dateAdded: '2025-09-10' },
+      { id: 'p32', name: 'Tulip Arrangement', price: 432, category: 'bouquets', img: 'images/images32.jpg', desc: 'A vibrant and classic sign of spring.', stock: 9, salePrice: 399, rating: 4.8, dateAdded: '2025-09-11' },
+      { id: 'p33', name: 'Hydrangea Bouquet', price: 1799, category: 'bouquets', img: 'images/images33.jpeg', desc: 'Large, beautiful blooms in a variety of colors.', stock: 2, salePrice: 1599, rating: 4.7, dateAdded: '2025-09-12' },
+      { id: 'p34', 'name': 'Mixed Greens Bouquet', 'price': 999, 'category': 'bouquets', 'img': 'images/images34.jpeg', 'desc': 'A simple and elegant arrangement of various foliage.', stock: 12, salePrice: null, rating: 4.4, dateAdded: '2025-09-13' },
+      { id: 'p35', 'name': 'Pruning Shears', 'price': 599, 'category': 'accessories', 'img': 'images/images35.jpeg', 'desc': 'Sharp and durable shears for precise trimming.', stock: 15, salePrice: null, rating: 4.8, dateAdded: '2025-09-14' },
+      { id: 'p36', 'name': 'Soil Scoop', 'price': 299, 'category': 'accessories', 'img': 'images/images36.jpeg', 'desc': 'A handy tool for potting and repotting plants.', stock: 20, salePrice: null, rating: 4.5, dateAdded: '2025-09-15' },
+      { id: 'p37', 'name': 'Moisture Meter', 'price': 799, 'category': 'accessories', 'img': 'images/images37.webp', 'desc': 'Helps you know exactly when to water your plants.', stock: 8, salePrice: 749, rating: 4.7, dateAdded: '2025-09-16' },
+      { id: 'p38', 'name': 'Gardening Gloves', 'price': 309, 'category': 'accessories', 'img': 'images/images38.jpg', 'desc': 'Protect your hands while you work in the garden.', stock: 25, salePrice: null, rating: 4.6, dateAdded: '2025-09-17' },
+      { id: 'p39', 'name': 'Cactus', 'price': 665, 'category': 'plants', 'img': 'images/images39.jpeg', 'desc': 'A classic desert plant that thrives on neglect.', stock: 30, salePrice: null, rating: 4.5, dateAdded: '2025-09-18' },
+      { id: 'p40', 'name': 'Jade Plant', 'price': 224, 'category': 'plants', 'img': 'images/images40.webp', 'desc': 'A popular succulent with fleshy, oval-shaped leaves.', stock: 15, salePrice: null, rating: 4.6, dateAdded: '2025-09-19' },
+      { id: 'p41', 'name': 'Areca Palm', 'price': 1500, 'category': 'plants', 'img': 'images/images41.webp', 'desc': 'A graceful palm that adds a tropical feel to any room.', stock: 7, salePrice: null, rating: 4.7, dateAdded: '2025-09-20' },
+      { id: 'p42', 'name': 'Chinese Money Plant', 'price': 999, 'category': 'plants', 'img': 'images/images42.webp', 'desc': 'Known for its unique, coin-shaped leaves.', stock: 0, salePrice: null, rating: 4.8, dateAdded: '2025-09-21' },
+      { id: 'p43', 'name': 'Anthurium', 'price': 199, 'category': 'plants', 'img': 'images/images43.jpeg', 'desc': 'Features stunning, long-lasting, waxy flowers.', stock: 9, salePrice: null, rating: 4.6, dateAdded: '2025-09-22' },
+      { id: 'p44', name: 'Prayer Plant', price: 699, category: 'plants', img: 'images/images44.webp', desc: 'Its leaves fold up at night, as if in prayer.', stock: 11, salePrice: null, rating: 4.7, dateAdded: '2025-09-23' },
+      { id: 'p45', 'name': 'Lily Bouquet', 'price': 1699, 'category': 'bouquets', 'img': 'images/images45.webp', 'desc': 'Elegant and fragrant lilies in a beautiful arrangement.', stock: 6, salePrice: 1499, rating: 4.8, dateAdded: '2025-09-24' },
+      { id: 'p46', 'name': 'Daisy Bouquet', 'price': 199, 'category': 'bouquets', 'img': 'images/images46.webp', 'desc': 'A simple and cheerful bouquet of fresh daisies.', stock: 14, salePrice: null, rating: 4.6, dateAdded: '2025-09-25' },
+      { id: 'p47', 'name': 'Orchid Bouquet', 'price': 492, 'category': 'bouquets', 'img': 'images/images47.jpeg', 'desc': 'An exotic and luxurious bouquet of orchids.', stock: 4, salePrice: null, rating: 4.9, dateAdded: '2025-09-26' },
+      { id: 'p48', 'name': 'Carnation Bouquet', 'price': 850, 'category': 'bouquets', 'img': 'images/images48.jpg', 'desc': 'A classic and long-lasting bouquet of carnations.', stock: 20, salePrice: null, rating: 4.5, dateAdded: '2025-09-27' },
+      { id: 'p49', 'name': 'Glass Vase', 'price': 599, 'category': 'accessories', 'img': 'images/images49.jpeg', 'desc': 'A simple and elegant glass vase for your bouquets.', stock: 30, salePrice: 499, rating: 4.7, dateAdded: '2025-09-28' },
+      { id: 'p50', 'name': 'Pebbles for Potting', 'price': 199, 'category': 'accessories', 'img': 'images/images50.jpg', 'desc': 'Decorative pebbles to top your plant pots.', stock: 50, salePrice: null, rating: 4.4, dateAdded: '2025-09-29' }
+    ];
+  </script>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
